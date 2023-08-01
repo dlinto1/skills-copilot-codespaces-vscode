@@ -1,13 +1,15 @@
 function skillsMember() {
-    var member = {
-        name: 'John',
-        age: 25,
-        skills: ['JavaScript', 'CSS', 'HTML'],
-        showSkills: function () {
-            this.skills.forEach(function (skill) {
-                console.log(`${this.name} knows ${skill}`);
-            }.bind(this));
-        }
-    };
-    member.showSkills();
+    var member = document.getElementById("member");
+    var memberButton = document.getElementById("memberButton");
+    var memberDropdown = document.getElementById("memberDropdown");
+
+    if (memberButton.innerHTML == "▼") {
+        memberButton.innerHTML = "▲";
+        memberDropdown.style.display = "block";
+        member.style.height = "auto";
+    } else {
+        memberButton.innerHTML = "▼";
+        memberDropdown.style.display = "none";
+        member.style.height = "0";
+    }
 }
