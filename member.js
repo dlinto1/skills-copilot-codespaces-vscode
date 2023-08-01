@@ -1,9 +1,13 @@
 function skillsMember() {
-  return {
-    restrict: 'E',
-    templateUrl: 'templates/skills-member.html',
-    scope: {
-      member: '='
-    }
-  };
+    var member = {
+        name: 'John',
+        age: 25,
+        skills: ['JavaScript', 'CSS', 'HTML'],
+        showSkills: function () {
+            this.skills.forEach(function (skill) {
+                console.log(`${this.name} knows ${skill}`);
+            }.bind(this));
+        }
+    };
+    member.showSkills();
 }
